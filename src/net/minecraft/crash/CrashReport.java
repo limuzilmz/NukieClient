@@ -19,6 +19,8 @@ import org.apache.commons.lang3.ArrayUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import static net.nukie.Client.Version;
+
 public class CrashReport
 {
     private static final Logger logger = LogManager.getLogger();
@@ -51,11 +53,11 @@ public class CrashReport
      */
     private void populateEnvironment()
     {
-        this.theReportCategory.addCrashSectionCallable("Minecraft Version", new Callable<String>()
+        this.theReportCategory.addCrashSectionCallable("Nukie Version", new Callable<String>()
         {
             public String call()
             {
-                return "1.8.8";
+                return ("1.8.8"+Version);
             }
         });
         this.theReportCategory.addCrashSectionCallable("Operating System", new Callable<String>()
@@ -227,7 +229,7 @@ public class CrashReport
     public String getCompleteReport()
     {
         StringBuilder stringbuilder = new StringBuilder();
-        stringbuilder.append("---- Minecraft Crash Report ----\n");
+        stringbuilder.append("---- Nukie Crash Report ----\n");
         stringbuilder.append("// ");
         stringbuilder.append(getWittyComment());
         stringbuilder.append("\n\n");
