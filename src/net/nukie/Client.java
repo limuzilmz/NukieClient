@@ -10,14 +10,10 @@ public class Client {
     public static String Name = "Nukie Client";
     public static String Version = "1.0";
     public static void Start(){
-        try {
             ViaMCP.create();
-            ViaMCP.INSTANCE.initAsyncSlider(); // For top left aligned slider
+            ViaMCP.INSTANCE.initAsyncSlider();
             ViaMCP.INSTANCE.initAsyncSlider(0, 0, 110, 20);
             ViaLoadingBase.getInstance().reload(ProtocolVersion.v1_8);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
         System.out.println("Website");
         Sys.openURL("https://github.com/limuzilmz/NukieClient");
         Display.setTitle(Name + " " + Version);
